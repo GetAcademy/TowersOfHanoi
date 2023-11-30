@@ -22,8 +22,12 @@
             var toIndex = toTowerNo - 1;
             var fromTower = Towers[fromIndex];
             var toTower = Towers[toIndex];
-            var disk = fromTower.RemoveDisk();
-            toTower.AddDisk(disk);
+            var disk = fromTower.GetTopDisk();
+            var didAdd = toTower.AddDisk(disk);
+            if (didAdd)
+            {
+                fromTower.RemoveDisk();
+            }
         }
     }
 }

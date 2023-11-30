@@ -8,5 +8,10 @@
         {
             Size = size;
         }
+
+        public bool IsGreaterThan(Disk topDisk)
+        {
+            return Size > topDisk.Size;
+        }
     }
 }

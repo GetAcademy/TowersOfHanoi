@@ -18,14 +18,25 @@
             return _disks.ToArray();
         }
 
+        public Disk GetTopDisk()
+        {
+            return _disks.Peek();
+        }
+
         public Disk RemoveDisk()
         {
             return _disks.Pop();
         }
 
-        public void AddDisk(Disk disk)
+        public bool AddDisk(Disk disk)
         {
+            if (_disks.Count > 0)
+            {
+                var topDisk = _disks.Peek();
+                if (disk.IsGreaterThan(topDisk)) return false;
+            }
             _disks.Push(disk);
+            return true;
         }
     }
 }
