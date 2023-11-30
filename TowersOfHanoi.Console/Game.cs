@@ -10,7 +10,7 @@
             IsRunning = true;
             Towers = new Tower[]
             {
-                new Tower(2, 4, 6),
+                new Tower(6, 4, 2),
                 new Tower(),
                 new Tower(),
             };

@@ -7,7 +7,7 @@
             var disks = tower.GetDisks();
             var row = startRow + height;
             WriteDisk(12, row, col, 'O');
-            foreach (var disk in disks)
+            foreach (var disk in disks.Reverse())
             {
                 row--;
                 WriteDisk(disk, row, col);
