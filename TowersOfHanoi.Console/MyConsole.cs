@@ -2,16 +2,29 @@
 {
     internal class MyConsole
     {
-        public static void WriteDisk(Disk disk, int row, int col)
+        public static void WriteTower(Tower tower, int startRow, int col, int height)
         {
-            var x = col - disk.Size / 2;
+            var disks = tower.GetDisks();
+            var row = startRow + height;
+            WriteDisk(12, row, col, 'O');
+            foreach (var disk in disks)
+            {
+                row--;
+                WriteDisk(disk, row, col);
+            }
+        }
+
+        public static void WriteDisk(Disk disk, int row, int col, char character = '=')
+        {
+            //System.Console.ForegroundColor = 
+            WriteDisk(disk.Size, row, col, character);
+        }
+
+        public static void WriteDisk(int size, int row, int col, char character = '=')
+        {
+            var x = col - size / 2;
             System.Console.SetCursorPosition(x, row);
-            System.Console.Write(string.Empty.PadLeft(disk.Size, '='));
-        }
-
-        public static void WriteTower(Tower tower, int row, int col)
-        {
-
-        }
+            System.Console.Write(new string(character, size));
+        }   
     }
 }
