@@ -38,5 +38,12 @@
                 currentCol += towerWidth;
             }
         }
+
+        public static int Ask(string question)
+        {
+            System.Console.Write(question);
+            var answer = System.Console.ReadLine();
+            return Convert.ToInt32(answer);
+        }
     }
 }

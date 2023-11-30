@@ -17,5 +17,15 @@
         {
             return _disks.ToArray();
         }
+
+        public Disk RemoveDisk()
+        {
+            return _disks.Pop();
+        }
+
+        public void AddDisk(Disk disk)
+        {
+            _disks.Push(disk);
+        }
     }
 }
