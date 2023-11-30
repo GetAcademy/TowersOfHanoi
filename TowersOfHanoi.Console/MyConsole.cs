@@ -25,6 +25,18 @@
             var x = col - size / 2;
             System.Console.SetCursorPosition(x, row);
             System.Console.Write(new string(character, size));
-        }   
+        }
+
+        public static void WriteGame(
+            Game game, int row, int col, 
+            int towerWidth, int towerHeight)
+        {
+            var currentCol = col;
+            foreach (var tower in game.Towers)
+            {
+                WriteTower(tower, row, currentCol, towerHeight);
+                currentCol += towerWidth;
+            }
+        }
     }
 }

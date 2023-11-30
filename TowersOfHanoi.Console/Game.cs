@@ -2,13 +2,13 @@
 {
     internal class Game
     {
-        private readonly Tower[] _towers;
+        public Tower[] Towers { get; }
 
         public Game()
         {
-            _towers = new Tower[]
+            Towers = new Tower[]
             {
-                new Tower(3, 2, 1),
+                new Tower(2, 4, 6),
                 new Tower(),
                 new Tower(),
             };

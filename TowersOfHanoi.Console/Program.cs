@@ -2,10 +2,10 @@
 
 using TowersOfHanoi.Console;
 
-// Pause 13:33
-
-
 var game = new Game();
-MyConsole.WriteGame(game);
+while (true)
+{
+    MyConsole.WriteGame(game, 2, 10, 20, 8);
+}
 
-Console.SetCursorPosition(1, 20);
+
