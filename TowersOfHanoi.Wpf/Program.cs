@@ -8,43 +8,19 @@ namespace TowersOfHanoi.Wpf
 {
     class Program
     {
-
+        // Pause til 11:04
         [STAThread]
         public static void Main(string[] args)
         {
-            // Pause til 10:35
-
-            var game = new  Game();
+            var game = new Game();
             var app = new Application();
             var window = new Window();
-            var gamePanel = new StackPanel{Orientation = Orientation.Horizontal };
-            foreach (var tower in game.Towers)
-            {
-                var towerPanel = new StackPanel { Orientation = Orientation.Vertical, VerticalAlignment = VerticalAlignment.Bottom };
-                foreach (var disk in tower.GetDisks())
-                {
-                    var rectangle = new Rectangle
-                    {
-                        Width = 20 * disk.Size,
-                        Height = 20,
-                        Fill = Brushes.Blue,
-                        Margin = new Thickness(5)
-                    };
-                    towerPanel.Children.Add(rectangle);
-                }
-                var towerBase = new Rectangle
-                {
-                    Width = 200,
-                    Height = 20,
-                    Fill = Brushes.Red,
-                    Margin = new Thickness(5)
-                };
-                towerPanel.Children.Add(towerBase);
-                gamePanel.Children.Add(towerPanel);
-            }
-            window.Content = gamePanel;
+            var gamePanel = new GamePanel(game);
+            window.Content = gamePanel.Panel;
             app.Run(window);
         }
+
+       
 
         /*
         [STAThread]
