@@ -8,15 +8,15 @@ namespace TowersOfHanoi.Wpf
 {
     class Program
     {
-        // Pause til 11:04
+    
         [STAThread]
         public static void Main(string[] args)
         {
             var game = new Game();
             var app = new Application();
             var window = new Window();
-            var gamePanel = new GamePanel(game);
-            window.Content = gamePanel.Panel;
+            var gamePanel = new GamePanel2(game);
+            window.Content = gamePanel;
             app.Run(window);
         }
 

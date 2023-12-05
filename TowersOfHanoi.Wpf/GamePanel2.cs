@@ -1,36 +1,35 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows;
 using System.Windows.Shapes;
 using TowersOfHanoi.Logic;
 
 namespace TowersOfHanoi.Wpf
 {
-    class GamePanel
+    class GamePanel2 : StackPanel
     {
         private Game _game;
         private StackPanel[] _towerPanels;
-        public StackPanel Panel { get; }
-
-        public GamePanel(Game game)
+        
+        public GamePanel2(Game game)
         {
             _game = game;
             _towerPanels = new StackPanel[game.Towers.Length];
-            Panel = CreateHorizontalPanel();
+            Orientation = Orientation.Horizontal;
             for (var index = 0; index < game.Towers.Length; index++)
             {
-                var towerPanel = CreateVerticalPanel();
+                var towerPanel = new TowerPanel();
                 _towerPanels[index] = towerPanel;
-                Panel.Children.Add(towerPanel);
+                Children.Add(towerPanel);
             }
-            var buttonPanel = CreateVerticalPanel();
+            var buttonPanel = new TowerPanel();
             AddButton(1, 2, buttonPanel);
             AddButton(1, 3, buttonPanel);
             AddButton(2, 1, buttonPanel);
             AddButton(2, 3, buttonPanel);
             AddButton(3, 1, buttonPanel);
             AddButton(3, 2, buttonPanel);
-            Panel.Children.Add(buttonPanel);
+            Children.Add(buttonPanel);
             UpdateTowers();
         }
         
@@ -82,16 +81,6 @@ namespace TowersOfHanoi.Wpf
                 Margin = new Thickness(5)
             };
             towerPanel.Children.Add(rectangle);
-        }
-
-        private static StackPanel CreateVerticalPanel()
-        {
-            return new StackPanel { Orientation = Orientation.Vertical, VerticalAlignment = VerticalAlignment.Bottom };
-        }
-
-        private static StackPanel CreateHorizontalPanel()
-        {
-            return new StackPanel { Orientation = Orientation.Horizontal };
         }
     }
 }
