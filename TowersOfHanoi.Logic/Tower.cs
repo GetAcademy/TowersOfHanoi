@@ -1,6 +1,6 @@
-﻿namespace TowersOfHanoi.Console
+﻿namespace TowersOfHanoi.Logic
 {
-    internal class Tower
+    public class Tower
     {
         private readonly Stack<Disk> _disks;
 

@@ -1,6 +1,6 @@
-﻿namespace TowersOfHanoi.Console
+﻿namespace TowersOfHanoi.Logic
 {
-    internal class Disk
+    public class Disk
     {
         public int Size { get; }
 

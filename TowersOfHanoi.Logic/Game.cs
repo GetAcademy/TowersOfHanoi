@@ -1,6 +1,6 @@
-﻿namespace TowersOfHanoi.Console
+﻿namespace TowersOfHanoi.Logic
 {
-    internal class Game
+    public class Game
     {
         public Tower[] Towers { get; }
         public bool IsRunning { get; private set; }

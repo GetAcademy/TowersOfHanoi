@@ -1,6 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using TowersOfHanoi.Console;
+﻿using TowersOfHanoi.Console;
+using TowersOfHanoi.Logic;
 
 var game = new Game();
 while (game.IsRunning)

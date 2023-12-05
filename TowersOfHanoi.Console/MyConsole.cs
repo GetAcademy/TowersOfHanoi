@@ -1,4 +1,6 @@
-﻿namespace TowersOfHanoi.Console
+﻿using TowersOfHanoi.Logic;
+
+namespace TowersOfHanoi.Console
 {
     internal class MyConsole
     {
